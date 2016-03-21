@@ -35,3 +35,7 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
+
+@app.route('/aboutme')
+def aboutMe():
+	return render_template('AboutMe.html')
