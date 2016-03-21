@@ -10,12 +10,11 @@ from FlaskWebProject import app
 @app.route('/home')
 def home():
     """Renders the home page."""
-    '''return render_template(
+    return render_template(
         'index.html',
         title='Home Page',
         year=datetime.now().year,
-    )'''
-	return render_template('MainPage.html')
+    )
 
 @app.route('/contact')
 def contact():
