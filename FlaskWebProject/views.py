@@ -1,6 +1,6 @@
 # Import the Flask Framework
 from flask import Flask, render_template, redirect, request
-from google.appengine.api import mail
+#from google.appengine.api import mail
 
 app = Flask(__name__)
 
@@ -25,7 +25,7 @@ def aboutSite():
 def timDuncan():
 	return render_template('TimDuncan.html')
 
-@app.route('/timduncansignup', methods=['POST'])
+'''@app.route('/timduncansignup', methods=['POST'])
 def timDuncanSignUp():
 	text = request.form['text']
 	if(text.count("@") != 0):
@@ -45,7 +45,7 @@ def timDuncanQuit():
               subject="Unsubscribe someone from Tim Duncan List",
               body=text)
 		return redirect("http://www.gautamk.us", code=302)
-	return redirect("http://www.gautamk.us/timduncan", code=302)
+	return redirect("http://www.gautamk.us/timduncan", code=302) '''
 
 @app.route('/projects')
 def projects():
