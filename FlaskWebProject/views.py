@@ -9,8 +9,7 @@ from FlaskWebProject import app
 @app.route('/')
 @app.route('/home')
 def home():
-    """Renders the home page."""
-    return render_template(
+	return render_template(
         'index.html'
     )
 
@@ -40,24 +39,24 @@ def aboutMe():
 
 @app.route('/nasa')
 def nasa():
-	return redirect("http://www.seas.virginia.edu/pubs/spectra/pdfs/nasapartnerships.pdf", code=302)
+	return redirect("http://www.seas.virginia.edu/pubs/spectra/pdfs/nasapartnerships.pdf")
 
 @app.route('/resume')
 def resume():
-	return redirect("https://s3.amazonaws.com/GautamResume/GautamKanumuruResume.pdf", code=302)
+	return redirect("https://s3.amazonaws.com/GautamResume/GautamKanumuruResume.pdf")
 
 @app.route('/uvradiationabstract')
 def uvabstract():
-	return redirect("https://s3.amazonaws.com/GautamResume/UVAbstract.pdf", code=302)
+	return redirect("https://s3.amazonaws.com/GautamResume/UVAbstract.pdf")
 
 @app.route('/uvradiationpaper')
 def uvpaper():
-	return redirect("https://s3.amazonaws.com/GautamResume/UVPaper.pdf", code=302)
+	return redirect("https://s3.amazonaws.com/GautamResume/UVPaper.pdf")
 
 @app.route('/fieabstract')
 def fieabstract():
-	return redirect("https://s3.amazonaws.com/GautamResume/FIEAbstract.pdf", code=302)
+	return redirect("https://s3.amazonaws.com/GautamResume/FIEAbstract.pdf")
 
 @app.route('/fiepaper')
 def fiepaper():
-	return redirect("https://s3.amazonaws.com/GautamResume/FIEPaper.pdf", code=302)
+	return redirect("https://s3.amazonaws.com/GautamResume/FIEPaper.pdf")
