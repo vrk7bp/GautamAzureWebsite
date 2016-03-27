@@ -15,7 +15,11 @@ def home():
 
 @app.route('/nasa')
 def nasaMethod():
-	return redirect('http://www.seas.virginia.edu/pubs/spectra/pdfs/nasapartnerships.pdf', code=302)
+	return redirect("http://www.seas.virginia.edu/pubs/spectra/pdfs/nasapartnerships.pdf", code=302)
+
+@app.route('/resume')
+def resumeMethod():
+	return redirect("https://s3.amazonaws.com/GautamResume/GautamKanumuruResume.pdf", code=302)
 
 @app.route('/contact')
 def contact():
@@ -41,15 +45,10 @@ def about():
 def aboutMe():
 	return render_template('AboutMe.html')
 
-#@app.route('/nasa')
-#def nasa():
-	#return redirect("http://www.seas.virginia.edu/pubs/spectra/pdfs/nasapartnerships.pdf", code=302)
-#	return render_template('AboutMe.html')
-
-@app.route('/resume')
-def resume():
+#@app.route('/resume')
+#def resume():
 	#return redirect("https://s3.amazonaws.com/GautamResume/GautamKanumuruResume.pdf")
-	return redirect("http://google.com")
+	#return redirect("http://google.com")
 
 @app.route('/uvradiationabstract')
 def uvabstract():
