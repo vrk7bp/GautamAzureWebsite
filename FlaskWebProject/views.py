@@ -22,30 +22,6 @@ def nasaMethod():
 def resumeMethod():
 	return redirect("https://s3.amazonaws.com/GautamResume/GautamKanumuruResume.pdf", code=302)
 
-@app.route('/contact')
-def contact():
-    """Renders the contact page."""
-    return render_template(
-        'contact.html',
-        title='Contact',
-        year=datetime.now().year,
-        message='Your contact page.'
-    )
-
-@app.route('/about')
-def about():
-    """Renders the about page."""
-    return render_template(
-        'about.html',
-        title='About',
-        year=datetime.now().year,
-        message='Your application description page.'
-    )
-
-@app.route('/aboutme')
-def aboutMe():
-	return render_template('AboutMe.html')
-
 @app.route('/uvradiationabstract')
 def uvabstract():
 	return redirect("https://s3.amazonaws.com/GautamResume/UVAbstract.pdf")
@@ -71,3 +47,23 @@ def page_not_found(e):
 def page_not_found(e):
     """Custom 500 Page."""
     return render_template('500Error.html'), 500
+
+"""@app.route('/contact')
+def contact():
+    #Renders the contact page.
+    return render_template(
+        'contact.html',
+        title='Contact',
+        year=datetime.now().year,
+        message='Your contact page.'
+    )
+
+@app.route('/about')
+def about():
+    #Renders the about page.
+    return render_template(
+        'about.html',
+        title='About',
+        year=datetime.now().year,
+        message='Your application description page.'
+    ) """
