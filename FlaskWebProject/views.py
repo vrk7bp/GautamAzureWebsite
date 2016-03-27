@@ -45,11 +45,6 @@ def about():
 def aboutMe():
 	return render_template('AboutMe.html')
 
-#@app.route('/resume')
-#def resume():
-	#return redirect("https://s3.amazonaws.com/GautamResume/GautamKanumuruResume.pdf")
-	#return redirect("http://google.com")
-
 @app.route('/uvradiationabstract')
 def uvabstract():
 	return redirect("https://s3.amazonaws.com/GautamResume/UVAbstract.pdf")
