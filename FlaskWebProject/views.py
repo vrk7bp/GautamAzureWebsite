@@ -10,8 +10,12 @@ from FlaskWebProject import app
 @app.route('/home')
 def home():
 	return render_template(
-        'index.html'
+        'MainPage.html'
     )
+
+@app.route('/nasa')
+def nasaMethod():
+	return redirect('http://www.seas.virginia.edu/pubs/spectra/pdfs/nasapartnerships.pdf', code=302)
 
 @app.route('/contact')
 def contact():
@@ -37,13 +41,15 @@ def about():
 def aboutMe():
 	return render_template('AboutMe.html')
 
-@app.route('/nasa')
-def nasa():
-	return redirect("http://www.seas.virginia.edu/pubs/spectra/pdfs/nasapartnerships.pdf")
+#@app.route('/nasa')
+#def nasa():
+	#return redirect("http://www.seas.virginia.edu/pubs/spectra/pdfs/nasapartnerships.pdf", code=302)
+#	return render_template('AboutMe.html')
 
 @app.route('/resume')
 def resume():
-	return redirect("https://s3.amazonaws.com/GautamResume/GautamKanumuruResume.pdf")
+	#return redirect("https://s3.amazonaws.com/GautamResume/GautamKanumuruResume.pdf")
+	return redirect("http://google.com")
 
 @app.route('/uvradiationabstract')
 def uvabstract():
@@ -60,3 +66,13 @@ def fieabstract():
 @app.route('/fiepaper')
 def fiepaper():
 	return redirect("https://s3.amazonaws.com/GautamResume/FIEPaper.pdf")
+	
+@app.errorhandler(404)
+def page_not_found(e):
+    """Custom 404 Page."""
+    return render_template('ErrorPage.html'), 404
+
+@app.errorhandler(500)
+def page_not_found(e):
+    """Custom 500 Page."""
+    return render_template('500Error.html'), 500
