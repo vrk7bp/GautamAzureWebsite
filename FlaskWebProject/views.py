@@ -38,6 +38,10 @@ def fieabstract():
 def fiepaper():
 	return redirect("https://s3.amazonaws.com/GautamResume/FIEPaper.pdf")
 	
+@app.route('/testing')
+def testMethod():
+	return "Is this working"
+
 @app.errorhandler(404)
 def page_not_found(e):
     """Custom 404 Page."""
@@ -47,23 +51,3 @@ def page_not_found(e):
 def page_not_found(e):
     """Custom 500 Page."""
     return render_template('500Error.html'), 500
-
-"""@app.route('/contact')
-def contact():
-    #Renders the contact page.
-    return render_template(
-        'contact.html',
-        title='Contact',
-        year=datetime.now().year,
-        message='Your contact page.'
-    )
-
-@app.route('/about')
-def about():
-    #Renders the about page.
-    return render_template(
-        'about.html',
-        title='About',
-        year=datetime.now().year,
-        message='Your application description page.'
-    ) """
